@@ -9,8 +9,7 @@
 
 struct HelpfulItem : Item
 {
-    HelpfulItem();
+    HelpfulItem() : 
     // void use(Character* character) override;
-    ~HelpfulItem() override;
 };
 

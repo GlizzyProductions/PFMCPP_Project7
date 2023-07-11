@@ -1,5 +1,5 @@
 language = "cpp"
-run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-padded -Wno-missing-prototypes main.cpp Item.cpp AttackItem.cpp Character.cpp Dwarf.cpp && ./a.out"
+run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-padded -Wno-missing-prototypes main.cpp && ./a.out"
 hidden = ["ccls"]
 entrypoint = "main.cpp"
 

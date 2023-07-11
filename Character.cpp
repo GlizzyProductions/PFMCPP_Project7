@@ -110,7 +110,6 @@ void Character::printStats()
     /*
     make your getStats() use a function from the Utility.h
     */
-    std::string getCharacterStats(Character* ch);
     std::cout << getStats(); 
     
     std::cout << std::endl;

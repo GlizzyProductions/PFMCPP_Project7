@@ -1,14 +1,7 @@
 #include "Dwarf.h"
-#include "Utility.h"
 
-Dwarf::Dwarf(const std::string name_, int hp, int armor_, int attackDamage_) : Character(hp, armor_, attackDamage_ ),
-name(name_)
-{
-    
-}
+//Dwarf::Dwarf
 
-Dwarf::~Dwarf() { }
+//Dwarf::getName
 
-const std::string& Dwarf::getName() { return name; }
-
-std::string Dwarf::getStats() { return getCharacterStats(this); }
+//Dwarf::getStats
