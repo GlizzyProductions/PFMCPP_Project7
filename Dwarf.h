@@ -8,8 +8,8 @@ struct Dwarf : Character
     Character( hp, armor_, attackDamage_ ),
     name (name_)
     {
-        helpfulItems = makeHelpfulItems(3);
-        defensiveItems = makeDefensiveItems(6);
+        helpfulItems = makeHelpfulItems(2);
+        defensiveItems = makeDefensiveItems(5);
     }
     
     const std::string& getName() override { return name; }
