@@ -8,7 +8,8 @@ struct Paladin : Character
     Character( hp, armor_, attackDamage_ ),
     name (name_)
     {
-        
+        helpfulItems = makeHelpfulItems(4);
+        defensiveItems = makeDefensiveItems(5);
     }
     
     const std::string& getName() override { return name; }

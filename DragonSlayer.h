@@ -9,7 +9,8 @@ struct DragonSlayer : Character
     Character( hp, armor_, attackDamage_ ),
     name (name_)
     {
-        
+        helpfulItems = makeHelpfulItems(3);
+        defensiveItems = makeDefensiveItems(3);
     }
     
     const std::string& getName() override { return name; }
@@ -17,5 +18,5 @@ struct DragonSlayer : Character
     void attack(Character& other) override;
 private:
     const std::string name;
-    std::unique_ptr<item> attackItem;
+    std::unique_ptr<Item> attackItem { new AttackItem() };
 };
