@@ -13,8 +13,8 @@ struct Paladin : Character
         padding[0] = 0;
     }
     
-    const std::string& getName() override { return name; }
-    std::string getStats() override { return getCharacterStats(this); }
+    const std::string& getName() override;
+    std::string getStats() override;
 
 private:
     char padding[8];

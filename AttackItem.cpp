@@ -1,13 +1,6 @@
-#include "Item.h"
-#include "Utility.h"
+#include "AttackItem.h"
 
-struct Character;
-struct AttackItem : Item
+void AttackItem::use(Character* character)
 {
-    AttackItem() : Item("attack item", 10) { }
-    void use(Character* character) override
-    {
-        useAttackItem(character, this);
-    }
-};
-
+    useAttackItem(character, this);
+}

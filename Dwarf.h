@@ -12,8 +12,8 @@ struct Dwarf : Character
         defensiveItems = makeDefensiveItems(5);
     }
     
-    const std::string& getName() override { return name; }
-    std::string getStats() override { return getCharacterStats(this); }
+    const std::string& getName() override;
+    std::string getStats() override;
                  
     private:
         const std::string name;
