@@ -10,11 +10,13 @@ struct Paladin : Character
     {
         helpfulItems = makeHelpfulItems(2);
         defensiveItems = makeDefensiveItems(6);
+        padding[0] = 0;
     }
     
     const std::string& getName() override { return name; }
     std::string getStats() override { return getCharacterStats(this); }
 
 private:
+    char padding[8];
     const std::string name;
 };
