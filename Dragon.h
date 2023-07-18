@@ -10,7 +10,7 @@ struct Dragon : Character
     std::string getStats() override;
     void attack(Character& other) override;
 
-private:
-    const std::string name ;
+    private:
+        const std::string name ;
 };
 
