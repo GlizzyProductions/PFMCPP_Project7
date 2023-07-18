@@ -36,8 +36,15 @@ void DragonSlayer::attack(Character& other)
         while( dragon->getHP() > 0 )
         {
             dragon->takeDamage(attackDamage);
-            attackItem->use(this);
-            attackItem.reset();
+            if( attackItem == nullptr )
+            {
+                std::cout<< "Pointer is nullptr." "\n";
+            }
+            else
+            {
+                attackItem->use(this);
+                attackItem.reset();
+            }
         }
     }
         
