@@ -5,16 +5,10 @@
 
 struct DragonSlayer : Character
 {
-    DragonSlayer (std::string name_, int hp, int armor_, int attackDamage_ = 4 ) : 
-    Character( hp, armor_, attackDamage_ ),
-    name (name_)
-    {
-        helpfulItems = makeHelpfulItems(3);
-        defensiveItems = makeDefensiveItems(3);
-    }
+    DragonSlayer (std::string name_, int hp, int armor_, int attackDamage_ = 4 );
     
-    const std::string& getName() override { return name; }
-    std::string getStats() override { return getCharacterStats(this); }
+    const std::string& getName() override;
+    std::string getStats() override;
     void attack(Character& other) override;
 private:
     const std::string name;
