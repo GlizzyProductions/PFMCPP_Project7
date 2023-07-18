@@ -14,7 +14,6 @@ struct Item
     inline int getBoost() const { return boost; }
 
 private:
-    char padding[8];
     std::string name;
     int boost;
 };
