@@ -24,7 +24,8 @@ struct Character
     void defend();
     
     void help( Character& other );
-    
+    //void boost(int& current, int& initial);
+
     int takeDamage(int damage);
     
     int getHP() const { return hitPoints; }

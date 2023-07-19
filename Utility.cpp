@@ -66,6 +66,7 @@ void useDefensiveItem(Character* character, Item& item)
         //dragons don't need defensive items
     }  
 }
+
 void useHelpfulItem(Character* character, Item* item)
 {
     if( auto* dw = dynamic_cast<Dwarf*>(character) )
@@ -85,6 +86,7 @@ void useHelpfulItem(Character* character, Item* item)
         //dragons don't carry helpful items!
     }
 }
+
 void useAttackItem(Character* character, Item* item)
 {
     if( auto* dw = dynamic_cast<Dwarf*>(character) )

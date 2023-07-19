@@ -6,7 +6,7 @@ Character( hp, armor_, attackDamage_ ),
 name (name_)
 {
     helpfulItems = makeHelpfulItems(3);
-    defensiveItems = makeDefensiveItems(3);
+    defensiveItems = makeDefensiveItems(1);
 }
 
 const std::string& DragonSlayer::getName()
@@ -35,16 +35,15 @@ void DragonSlayer::attack(Character& other)
             
         while( dragon->getHP() > 0 )
         {
-            dragon->takeDamage(attackDamage);
-            if( attackItem == nullptr )
-            {
-                std::cout<< "Pointer is nullptr." "\n";
-            }
-            else
+            if( attackItem != nullptr )
             {
                 attackItem->use(this);
                 attackItem.reset();
             }
+            
+            dragon->takeDamage(attackDamage);
+
+
         }
     }
         
