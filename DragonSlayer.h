@@ -1,3 +1,4 @@
+//DragonSlayer.h
 #pragma once
 #include "Character.h"
 #include "Utility.h"
@@ -10,6 +11,7 @@ struct DragonSlayer : Character
     const std::string& getName() override;
     std::string getStats() override;
     void attack(Character& other) override;
+    void attackInternal(Character& other);
 
     private:
         const std::string name;

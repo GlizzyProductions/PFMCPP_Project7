@@ -1,3 +1,4 @@
+//Character.h
 #pragma once
 
 #include <string>
@@ -59,8 +60,7 @@ struct Character
 protected:
     std::vector<std::unique_ptr<Item>> defensiveItems;
     std::vector<std::unique_ptr<Item>> helpfulItems;
-    int hitPoints, armor;
-    int attackDamage;
+    int hitPoints, armor, attackDamage;
     bool isDefending = false;
 private:
     std::unique_ptr<int> initialHitPoints, initialArmorLevel,initialAttackDamage;
