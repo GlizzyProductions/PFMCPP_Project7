@@ -12,6 +12,11 @@ name (name_)
 
 void DragonSlayer::attack(Character& other)
 {
+    if( attackItem != nullptr )
+    {
+        attackItem->use(this);
+        attackItem.reset();
+    } 
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
@@ -20,11 +25,6 @@ void DragonSlayer::attack(Character& other)
         //note: they should only use the item if the dragon's hitpoints are > 0...
         //note: items are single-use only, so you need to reset it after use.  
         //look in the Character class for how the other item types are reset after use.*/
-        if( attackItem != nullptr )
-        {
-            attackItem->use(this);
-            attackItem.reset();
-        } 
         
         while( dragon->getHP() > 0 )
         {   

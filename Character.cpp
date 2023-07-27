@@ -7,32 +7,58 @@
 #include "HelpfulItem.h"
 #include "Utility.h"
 
-Character::Character(int hp, int armor_, int attackDamage_)
-    : hitPoints(hp), armor(armor_), attackDamage(attackDamage_) {
-  initialHitPoints.reset(new int(hitPoints));
-  initialArmorLevel.reset(new int(armor));
-  initialAttackDamage.reset(new int(attackDamage));
+Character::Character(int hp, int armor_, int attackDamage_) : 
+hitPoints(hp), armor(armor_), attackDamage(attackDamage_) 
+{
+    initialHitPoints.reset(new int(hitPoints));
+    initialArmorLevel.reset(new int(armor));
+    initialAttackDamage.reset(new int(attackDamage));
 }
 
-void Character::attack(Character &other) {
-  if (hitPoints <= 0) 
-  {
-    std::cout << getName() << " can't attack. " << getName() << " is dead."
-              << std::endl;
-    std::cout << "make another party member use an item to revive them"
-              << std::endl
-              << std::endl;
-    return;
-  }
+int Character::takeDamage(int damage) 
+{
+    std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
+    if (damage < armor) 
+    {
+        armor -= damage;
+    } 
+    else 
+    {
+        damage -= armor;
+        armor = 0;
+    
+        hitPoints -= damage;
+        if (hitPoints < 0) 
+        {
+            std::cout << getName() << " has died in battle!" << std::endl;
+            hitPoints = 0;
+        }
+    }
+    
+  printStats();
+  return hitPoints;
+}
 
-  isDefending = false;
-  std::cout << getName() << " has attacked " << other.getName() << std::endl;
+void Character::attack(Character &other) 
+{
+    if (hitPoints <= 0) 
+    {
+        std::cout << getName() << " can't attack. " << getName() << " is dead."
+        << std::endl;
+        std::cout << "make another party member use an item to revive them"
+        << std::endl
+        << std::endl;
+        return;
+    }
 
-  if (other.takeDamage(attackDamage) <= 0) 
-  {
-    // if you kill other, you get a boost in hit points and armor.
-    attackInternal(other);
-  }
+    isDefending = false;
+    std::cout << getName() << " has attacked " << other.getName() << std::endl;
+
+    if (other.takeDamage(attackDamage) <= 0) 
+    {
+        // if you kill other, you get a boost in hit points and armor.
+        attackInternal(other);
+    }
 }
 
 void Character::defend() {
@@ -57,24 +83,6 @@ void Character::help(Character &other) {
       break;
     }
   }
-}
-
-int Character::takeDamage(int damage) {
-  std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
-  if (damage < armor) {
-    armor -= damage;
-  } else {
-    damage -= armor;
-    armor = 0;
-
-    hitPoints -= damage;
-    if (hitPoints < 0) {
-      std::cout << getName() << " has died in battle!" << std::endl;
-      hitPoints = 0;
-    }
-  }
-  printStats();
-  return hitPoints;
 }
 
 void boost(int &current, int &initial) 
