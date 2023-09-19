@@ -1,4 +1,3 @@
-//main.cpp
 #include <iostream>
 #include <string>
 #include <vector>
@@ -95,7 +94,7 @@ int main()
     dragonSlayer.help( paladin ); //now he's not dead
     paladin.attack( dragon ); //he's alive now.
     dragon.attack( dwarf ); //dwarf is dead
-    paladin.help(dwarf); //dwarf is alive now.
+    paladin.help( dwarf ); //dwarf is alive now.
     
     dragon.attack( dragonSlayer ); //he dodges
     dragonSlayer.attack( dragon ); //dragon is slayed.
@@ -107,7 +106,7 @@ int main()
     
     std::vector<Character*> characters { &dwarf, &paladin, &dragon, &dragonSlayer };
     for( auto* character : characters )
-        character->printStats();
+    character->printStats();
     
     return 0;
 }

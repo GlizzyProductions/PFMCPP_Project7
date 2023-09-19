@@ -1,4 +1,3 @@
-//AttackItem.h
 #pragma once
 #include "Item.h"
 #include "Utility.h"

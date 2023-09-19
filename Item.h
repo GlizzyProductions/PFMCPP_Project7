@@ -11,6 +11,7 @@ struct Item
     Item( const std::string& name_, int effect );
     
     inline const std::string& getName() { return name; }
+
     inline int getBoost() const { return boost; }
 
 private:

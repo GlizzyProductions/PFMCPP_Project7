@@ -25,7 +25,8 @@ struct Character
     void defend();
     
     void help( Character& other );
-    //void boost(int& current, int& initial);
+
+    void boost(int& current, int& initial);
 
     int takeDamage(int damage);
     
@@ -63,7 +64,7 @@ protected:
     int hitPoints, armor, attackDamage;
     bool isDefending = false;
 private:
-    std::unique_ptr<int> initialHitPoints, initialArmorLevel,initialAttackDamage;
+    std::unique_ptr<int> initialHitPoints, initialArmorLevel, initialAttackDamage;
     
     void attackInternal(Character& other);
 };

@@ -12,8 +12,9 @@ name (name_)
 void Dragon::attack(Character &other)
 {
     std::cout << name << " is attacking " << other.getName() << "!!!" << std::endl;
-    if( auto* slayer = dynamic_cast<DragonSlayer*>(&other) )
+    if( auto *slayer = dynamic_cast<DragonSlayer*>(&other) )
     {
+        //slayer->attackInternal(this);
         //dragons can't attack dragon slayers
         slayer->defend();
     }

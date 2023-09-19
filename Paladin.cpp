@@ -7,6 +7,7 @@ name (name_)
 {
     helpfulItems = makeHelpfulItems(2);
     defensiveItems = makeDefensiveItems(6);
+    attackDamage = 10;
 }
   
 const std::string& Paladin::getName()
