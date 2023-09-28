@@ -13,6 +13,6 @@ struct DragonSlayer : Character
     void attack(Character& other) override;
 
     private:
-        const std::string name;
-        std::unique_ptr<AttackItem> attackItem { new AttackItem() };
+    const std::string name;
+    std::unique_ptr<AttackItem> attackItem { new AttackItem() };
 };

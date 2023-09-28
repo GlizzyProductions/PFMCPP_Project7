@@ -11,5 +11,5 @@ struct Dwarf : Character
     std::string getStats() override;
                  
     private:
-        const std::string name;
+    const std::string name;
 };

@@ -13,7 +13,6 @@ name (name_)
 
 void DragonSlayer::attack(Character& other)
 {
-
     std::cout << name << " is attacking " << other.getName() << " !!" << std::endl;
     if( auto* dragon = dynamic_cast<Dragon*>(&other) )
     {
@@ -27,8 +26,8 @@ void DragonSlayer::attack(Character& other)
         {
             if(dragon->getHP() > 0)
             {
-            attackItem->use(this);
-            attackItem.reset();
+                attackItem->use(this);
+                attackItem.reset();
             }
         }
         

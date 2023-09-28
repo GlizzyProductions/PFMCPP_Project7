@@ -15,28 +15,27 @@ hitPoints(hp), armor(armor_), attackDamage(attackDamage_)
     initialAttackDamage.reset(new int(attackDamage));
 }
 
-int Character::takeDamage(int damage) 
+int Character::takeDamage(int damage)
 {
     std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
-    if (damage <= armor) 
+    if( damage < armor )
     {
         armor -= damage;
-    } 
-    else 
+    }
+    else
     {
         damage -= armor;
         armor = 0;
-    
+        
         hitPoints -= damage;
-        if (hitPoints < 0) 
+        if( hitPoints < 0 )
         {
             std::cout << getName() << " has died in battle!" << std::endl;
             hitPoints = 0;
         }
     }
-    
-  printStats();
-  return hitPoints;
+    printStats();
+    return hitPoints;
 }
 
 void Character::attack(Character& other) 
@@ -112,12 +111,12 @@ void Character::attackInternal(Character& other)
     character.
   */
 
-    boost(hitPoints, *initialHitPoints);
-    boost(armor, *initialArmorLevel);
-    boost(attackDamage, *initialAttackDamage);
+        boost(hitPoints, *initialHitPoints);
+        boost(armor, *initialArmorLevel);
+        boost(attackDamage, *initialAttackDamage);
 
-    std::cout << getName() << " defeated " << other.getName()
-              << " and leveled up!" << std::endl;
+        std::cout << getName() << " defeated " << other.getName()
+                               << " and leveled up!" << std::endl;
     }
 }
 
