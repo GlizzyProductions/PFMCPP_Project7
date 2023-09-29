@@ -34,15 +34,9 @@ void DragonSlayer::attack(Character& other)
         {   
             dragon->takeDamage(attackDamage);
         }
-        
     }
 
     Character::attack(other);
-    
-    if (other.getHP() <= 0) 
-    {
-        attackDamage *= 1.1;
-    }
 }
 
 const std::string& DragonSlayer::getName()

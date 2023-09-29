@@ -66,9 +66,9 @@ void Character::defend()
     {
         if (auto *defensiveItem = dynamic_cast<DefensiveItem *>( item.get() )) 
         {
-          defensiveItem->use(this);
-          item.reset(); // can only be used once!
-          break;
+            defensiveItem->use(this);
+            item.reset(); // can only be used once!
+            break;
         }
     }
     
@@ -77,25 +77,27 @@ void Character::defend()
 
 void Character::help(Character& other) 
 {
-  std::cout << getName() << " is going to help " << other.getName()
+    std::cout << getName() << " is going to help " << other.getName()
             << std::endl;
-  for (auto &item : helpfulItems) {
-    if (auto *helpfulItem = dynamic_cast<HelpfulItem *>(item.get())) {
-      helpfulItem->use(&other);
-      item.reset(); // can only be used once!
-      break;
+    for (auto &item : helpfulItems) 
+    {
+        if (auto *helpfulItem = dynamic_cast<HelpfulItem *>(item.get())) 
+        {
+            helpfulItem->use(&other);
+            item.reset(); // can only be used once!
+            break;
+        }
     }
-  }
 }
 
 void Character::boost(int& current, int& initial) 
 {
-  if(current <= initial) 
+    if(current < initial) 
     {
         current = initial;
-        current *= 1.1;
-        initial = current;
     }
+    current *= 1.1;
+    initial = current;
 }
 
 void Character::attackInternal(Character& other) 
