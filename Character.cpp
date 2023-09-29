@@ -14,29 +14,6 @@ hitPoints(hp), armor(armor_), attackDamage(attackDamage_)
     initialAttackDamage.reset(new int(attackDamage));
 }
 
-int Character::takeDamage(int damage)
-{
-    std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
-    if( damage < armor )
-    {
-        armor -= damage;
-    }
-    else
-    {
-        damage -= armor;
-        armor = 0;
-        
-        hitPoints -= damage;
-        if( hitPoints < 0 )
-        {
-            std::cout << getName() << " has died in battle!" << std::endl;
-            hitPoints = 0;
-        }
-    }
-    printStats();
-    return hitPoints;
-}
-
 void Character::attack(Character& other) 
 {
     if (hitPoints <= 0) 
@@ -88,6 +65,29 @@ void Character::help(Character& other)
             break;
         }
     }
+}
+
+int Character::takeDamage(int damage)
+{
+    std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
+    if( damage < armor )
+    {
+        armor -= damage;
+    }
+    else
+    {
+        damage -= armor;
+        armor = 0;
+        
+        hitPoints -= damage;
+        if( hitPoints < 0 )
+        {
+            std::cout << getName() << " has died in battle!" << std::endl;
+            hitPoints = 0;
+        }
+    }
+    printStats();
+    return hitPoints;
 }
 
 void Character::boost(int& current, int& initial) 
