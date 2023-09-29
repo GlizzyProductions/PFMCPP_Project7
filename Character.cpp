@@ -1,4 +1,3 @@
-//Character.cpp
 #include "Character.h"
 #include <iostream>
 #include <vector>

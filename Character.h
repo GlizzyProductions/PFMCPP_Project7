@@ -1,4 +1,3 @@
-//Character.h
 #pragma once
 
 #include <string>

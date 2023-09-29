@@ -1,4 +1,3 @@
-//AttackItem.cpp
 #include "AttackItem.h"
 
 AttackItem::AttackItem() : Item("attack item", 10) 

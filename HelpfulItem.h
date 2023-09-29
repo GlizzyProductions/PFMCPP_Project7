@@ -1,4 +1,3 @@
-//HelpfulItem.h
 #pragma once
 
 #include "Item.h"

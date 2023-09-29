@@ -1,4 +1,3 @@
-//DragonSlayer.cpp
 #include "DragonSlayer.h"
 #include "Dragon.h"
 
