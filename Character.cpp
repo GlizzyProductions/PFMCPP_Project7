@@ -113,8 +113,7 @@ void Character::attackInternal(Character& other)
         boost(armor, *initialArmorLevel);
         boost(attackDamage, *initialAttackDamage);
 
-        std::cout << getName() << " defeated " << other.getName()
-                               << " and leveled up!" << std::endl;
+        std::cout << getName() << " defeated " << other.getName() << " and leveled up!" << std::endl;
     }
 }
 
