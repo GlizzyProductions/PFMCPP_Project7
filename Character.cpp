@@ -14,7 +14,7 @@ hitPoints(hp), armor(armor_), attackDamage(attackDamage_)
     initialAttackDamage.reset(new int(attackDamage));
 }
 
-void Character::attack(Character& other) 
+void Character::attack(Character& other) FIXME: move this function back to its original place in this file
 {
     if (hitPoints <= 0) 
     {
@@ -67,7 +67,7 @@ void Character::help(Character& other)
     }
 }
 
-int Character::takeDamage(int damage)
+int Character::takeDamage(int damage) FIXME: move this function back to its original place in this file
 {
     std::cout << getName() << " is taking " << damage << " damage!" << std::endl;
     if( damage < armor )
