@@ -1,7 +1,21 @@
 #include "Dwarf.h"
 
-//Dwarf::Dwarf
 
-//Dwarf::getName
+Dwarf::Dwarf(std::string name_, int hp, int armor_, int attackDamage_) : 
+Character( hp, armor_, attackDamage_ ),
+name (name_)
+{
+    helpfulItems = makeHelpfulItems(2);
+    defensiveItems = makeDefensiveItems(5);
+    attackDamage = 4;
+}
 
-//Dwarf::getStats
+const std::string& Dwarf::getName()
+{ 
+    return name; 
+}
+
+std::string Dwarf::getStats()
+{ 
+    return getCharacterStats(this); 
+}
